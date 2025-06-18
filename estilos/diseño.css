@@ -17,9 +17,9 @@
 }
 
 .Encabezado img {
-    width: 210px;
-    height: 250px;
-    margin-top: 30px;   /*posible desnivel*/
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;   /*posible desnivel*/
     margin-right: 10px;
 }
 
@@ -53,6 +53,7 @@
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
 }
+
 
 .styled-link:hover {
     color: #1e90ff;
@@ -108,4 +109,3 @@
         margin-top: 10px;
     }
 }
-

@@ -1,0 +1,256 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Are+You+Serious&family=Bigelow+Rules&family=Coiny&family=Griffy&family=Itim&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=National+Park:wght@200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Special+Elite&family=Vidaloka&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #dcd7f8;
+    --text-dark: #3f3b57;
+    --text-light: #908ca3;
+    --white: #ffffff;
+    --max-width: 1200px;
+  }
+
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+/* Logo a la izquierda */
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+/* Contenedor de enlaces */
+.nav-links {
+    display: flex;
+    gap: 30px; /* Espacio entre enlaces */
+}
+
+/* Estilo general de enlaces */
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* Efecto hover */
+.nav-links a:hover {
+    color: #cc92e4;
+}
+/* Contenedor del dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Submenú oculto por defecto */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    flex-direction: column;
+}
+
+/* Estilo para los enlaces dentro del submenu */
+.submenu a {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #8f7e7e;
+    font-size: 16px;
+}
+
+/* Mostrar el submenu al pasar el mouse */
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+/* Hover para enlaces dentro del submenu */
+.submenu a:hover {
+    background-color: rgb(175, 175, 180);
+}
+
+/* inicio */
+body {
+        scroll-behavior: smooth;      
+}
+
+/*home*/
+
+.section__container {
+    max-width: var(--max-width);
+    padding: 2rem 1rem;
+    margin: auto;
+  }
+
+  header {
+    padding-top: 5rem;
+    position: relative;
+    isolation: isolate;
+    background-color: #dcd7f8;
+  }
+  
+  .header__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: #3f6e949d;
+    z-index: -1;
+  }
+  
+  .header__container {
+    padding-block: 2rem 0;
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .header__content h4 {
+    max-width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    padding: 5px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Coi';
+    color: var(--text-dark);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5rem;
+  }
+  
+  .header__content h1 {
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  
+  .header__content h1 span {
+    font-size: 5rem;
+  }
+  
+  .header__content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    font-family: 'Embed code' ;
+  }
+  
+  .header__content p {
+    margin-bottom: 2rem;
+    color: black;
+    text-align: center;
+  }
+  
+  .header__btn button {
+    padding-block: 0.5rem;
+    padding-inline: 1.5rem 0.5rem;
+    margin-inline: auto;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5rem;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .header__image {
+  position: relative;
+  isolation: isolate;
+}
+
+.header__image img {
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+img.header__image-bg {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translateY(-50%);
+  max-width: 340px !important;
+  z-index: -1;
+}
+
+  .header__btn button:hover {
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .header__btn button:hover span {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  @media (width > 540px) {
+    .header__content h1 {
+      font-size: 4.5rem;
+      line-height: 5rem;
+    }
+  
+    .header__content h1 span {
+      font-size: 6rem;
+    }
+}
+
+    @media (width > 768px) {
+        header {
+            padding-top: 0;
+          }
+        
+          .header__container {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+          }
+        
+          .header__content {
+            grid-column: 1,2,2,3;
+           
+          }
+        
+          .header__content :is(h4, .header__btn button) {
+            margin-inline-start: unset;
+          }
+        
+          .header__content :is(h1, h2) {
+            text-align: left;
+          }
+        
+          .header__content p {
+            max-width: 400px;
+            text-align: left;
+          }
+        
+          .header__image img {
+            max-width: 500px;
+          }
+        }
