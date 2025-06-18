@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MENU DE NAVEGACIÓN */
+
+.Encabezado {
+    height:70px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto; 
+    align-items: center;
+    padding: 20px;
+}
+
+.Encabezado img {
+    width: 210px;
+    height: 250px;
+    margin-top: 30px;   /*posible desnivel*/
+    margin-right: 10px;
+}
+
+.menu {
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.styled-link {
+    margin-left: 15px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.styled-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #1390ff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.styled-link:hover {
+    color: #1e90ff;
+}
+
+.buttom .styled-link {
+    color: #1390ff;
+}
+
+.boton {
+    background-color: #000000;
+    margin-left: 15px;   
+    border-radius: 20px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.boton a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Lexend", sans-serif;
+}
+
+.boton:hover {
+  background-color: #1390ff;  
+  color: #e0e0e0;   
+  border-color: #1390ff;          
+}
+
+/*RESPONSIVE MENU*/
+
+
+ @media (max-width: 768px) {
+            .Encabezado {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .menu a.styled-link {
+        padding: 5px 10px;
+    }
+    
+    .menu .boton {
+        margin-top: 10px;
+    }
+}
+
