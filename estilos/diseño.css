@@ -19,7 +19,7 @@
 .Encabezado img {
     width: 100px;
     height: 100px;
-    margin-top: 5px;   /*posible desnivel*/
+    margin-top: 10px;   /*posible desnivel*/
     margin-right: 10px;
 }
 
@@ -105,3 +105,8 @@
         margin-top: 10px;
     }
 }
+
+.foto {
+    margin-left: 50px;
+}
+
