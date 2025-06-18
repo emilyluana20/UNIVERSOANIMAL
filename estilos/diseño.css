@@ -34,7 +34,7 @@
     margin-left: 15px;
     font-family: "Lexend", sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     color: #000000;
     text-decoration: none;
     padding: 5px 0;
@@ -48,7 +48,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #1390ff;
+    background-color: #d49cdb;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
@@ -56,15 +56,11 @@
 
 
 .styled-link:hover {
-    color: #1e90ff;
-}
-
-.buttom .styled-link {
-    color: #1390ff;
+    color: #d49cdb;
 }
 
 .boton {
-    background-color: #000000;
+    background-color: #bb6cc5;
     margin-left: 15px;   
     border-radius: 20px;
     padding: 8px 16px;
@@ -75,14 +71,14 @@
 .boton a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-family: "Lexend", sans-serif;
 }
 
 .boton:hover {
-  background-color: #1390ff;  
+  background-color: #d49cdb;  
   color: #e0e0e0;   
-  border-color: #1390ff;          
+  border-bottom: none;          
 }
 
 /*RESPONSIVE MENU*/
