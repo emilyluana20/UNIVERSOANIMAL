@@ -17,9 +17,9 @@
 }
 
 .Encabezado img {
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;   /*posible desnivel*/
+    width: 90px;
+    height: 90px;
+    margin-top: 5px;   /*posible desnivel*/
     margin-right: 10px;
 }
 
@@ -32,9 +32,6 @@
 
 .styled-link {
     margin-left: 15px;
-    font-family: "Lexend", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
     color: #000000;
     text-decoration: none;
     padding: 5px 0;
@@ -56,7 +53,7 @@
 
 
 .styled-link:hover {
-    color: #d49cdb;
+    color: #bb6cc5;
 }
 
 .boton {
@@ -72,7 +69,6 @@
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-family: "Lexend", sans-serif;
 }
 
 .boton:hover {
@@ -81,8 +77,30 @@
   border-bottom: none;          
 }
 
-/*RESPONSIVE MENU*/
+/*CONTENDEDOR CON PRESENTACIÓN*/
 
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 70px;
+}
+
+.contenedor img {
+  width: 650px;
+  height: 650px;
+}
+
+.texto {
+  max-width: 400px;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 80px;
+}
+
+
+/*RESPONSIVE*/
 
  @media (max-width: 768px) {
             .Encabezado {
