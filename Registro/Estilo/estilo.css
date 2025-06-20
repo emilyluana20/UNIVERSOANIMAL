@@ -1,0 +1,295 @@
+/* Estilo principal del sitio */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  cursor: url('../imagenes/Cursor-Perrito-48x48.png') 16 16, auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e3d8f8;
+  color: #5d5a88;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #4a4474;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.usuario-logueado {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #ddd7ff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Bienvenida */
+.bienvenida {
+  padding: 60px 20px 30px;
+}
+
+.contenido-bienvenida {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+.texto-bienvenida {
+  flex: 1 1 300px;
+  max-width: 520px;
+}
+
+.texto-bienvenida h1 {
+  font-size: 3rem;
+  color: #4a4474;
+  margin-bottom: 20px;
+}
+
+.texto-bienvenida p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #3f3b57;
+}
+
+.texto-bienvenida button {
+  background-color: #5d5a88;
+  color: #fff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.imagen-bienvenida img {
+  max-width: 360px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Cuidados */
+.cuidados {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #e0d6f5;
+}
+
+.items-cuidados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 25px;
+  max-width: 960px;
+  margin: auto;
+}
+
+.item img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 12px;
+}
+
+.item p {
+  font-weight: 600;
+  color: #3f3b57;
+}
+
+/* Campañas */
+.campanias {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.tarjetas-campanias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  width: 100%;
+  max-width: 100px;
+  margin-bottom: 12px;
+}
+
+/* Mapas */
+.mapita {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+
+.mapita iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Perdidos */
+.perdidos {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.tarjetas-perdidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 960px;
+  margin: auto;
+}
+
+.card-perdido {
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.card-perdido img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Reencuentros */
+.reencuentros {
+  padding: 60px 20px;
+}
+
+.reencuentros h2 {
+  text-align: center;
+  color: #4b2e83;
+  margin-bottom: 30px;
+}
+
+.reencuentros-galeria {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-reencuentro {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-reencuentro img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.card-reencuentro p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Botón publicar */
+.boton-publicar {
+  margin-top: 35px;
+  background-color: #5d5a88;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.boton-publicar:hover {
+  background-color: #3f3b66;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    background-color: #4a4474;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .contenido-bienvenida {
+    flex-direction: column;
+    text-align: center;
+  }
+}
