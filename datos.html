@@ -1,35 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/diseño.css">
-    <link rel="shortcut icon" href="img/logo.png" type="image/img">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <title>Datos | Universo Animal</title>
 </head>
 <body>
-
-     <header class="Encabezado">
-        <img src="img/logo.png" alt="">
+    <header class="Encabezado">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo Universo Animal">
+        </div>
         <nav class="menu">
-            <br><br>
             <a href="index.html" class="styled-link">Inicio</a>
-            <a href="pages/" class="styled-link">Busqueda</a>
-            <a href="pages/"class="styled-link">Feed</a>
+            <a href="pages/" class="styled-link">Búsqueda</a>
+            <a href="pages/" class="styled-link">Feed</a>
             <a href="pages/" class="styled-link">Reencuentros</a>
-            <a href="contacto.html" class="styled-link">Contactos</a>
+            <a href="contacto.html" class="styled-link">Contacto</a>
             <button class="boton"><a href="Registro/Index.html">Iniciar sesión</a></button>
         </nav>
+        <button class="menu-hamburguesa" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-     <div class="contenedor">
-        <img src="img/gatito.png">
-        <div class="texto">
-            <h1>Datos sobre nuestras mascotas</h1>
-            <h3>El mejor cuidado para tu mascota. 🐾</h3>
-            <h1>hola</h1>
+    <main class="contenedor-principal">
+        <div class="contenedor">
+            <img src="img/gatito.png" class="imagen-principal">
+            <div class="texto">
+                <h1>Datos sobre nuestras mascotas</h1>
+                <h3>El mejor cuidado para tu mascota. 🐾</h3>
+                <p class="descripcion">En Universo Animal nos preocupamos por el bienestar de tus compañeros peludos.</p>
+            </div>
         </div>
-    </div>
+    </main>
 
+    <footer class="pie-pagina">
+        <p>© 2023 Universo Animal - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="prueba.js"></script>
 </body>
 </html>
