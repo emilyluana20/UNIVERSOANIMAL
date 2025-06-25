@@ -10,15 +10,15 @@
 <body>
     <header class="Encabezado">
         <div class="logo-container">
-            <img src="img/logo.png" alt="Logo Universo Animal">
+            <img src="img/logo.png">
         </div>
         <nav class="menu">
-            <a href="index.html" class="styled-link">Inicio</a>
+            <a href="index.php" class="styled-link">Inicio</a>
             <a href="pages/" class="styled-link">Búsqueda</a>
             <a href="pages/" class="styled-link">Feed</a>
             <a href="pages/" class="styled-link">Reencuentros</a>
-            <a href="contacto.html" class="styled-link">Contacto</a>
-            <button class="boton"><a href="Registro/Index.html">Iniciar sesión</a></button>
+            <a href="contacto.php" class="styled-link">Contacto</a>
+            <button class="boton"><a href="Registro/Index.php">Iniciar sesión</a></button>
         </nav>
         <button class="menu-hamburguesa" aria-label="Menú">
             <span></span>
@@ -37,10 +37,6 @@
             </div>
         </div>
     </main>
-
-    <footer class="pie-pagina">
-        <p>© 2023 Universo Animal - Todos los derechos reservados</p>
-    </footer>
 
     <script src="prueba.js"></script>
 </body>
