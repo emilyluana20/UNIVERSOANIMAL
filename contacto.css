@@ -1,0 +1,183 @@
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://img.freepik.com/premium-vector/seamless-vector-repeat-pattern-pet-with-paws_654662-2650.jpg?w=2000');
+            background-attachment: fixed;
+        }
+
+header {
+    background: linear-gradient(135deg, #feffff 0%, #b27cc0 100%); 
+    padding: 30px 0;
+    border-radius: 0 0 15px 15px; 
+    margin-bottom: 30px;
+        }
+
+.form-header {
+    max-width: 800px; 
+    margin: 0 auto; 
+    text-align: center; 
+    color: black; 
+    padding: 0 20px;
+    font-size: 1.2em;
+        }
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em; 
+    font-weight: 700; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+    
+header p {
+    font-size: 1.2em;
+     margin-top: 15px; 
+     margin-bottom: 0; 
+     opacity: 0.9; 
+     font-weight: 300;
+}
+
+header .tags {
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 20px;
+}
+
+.tag {
+    background-color: rgba(255, 255, 255, 0.2);
+     padding: 8px 15px; 
+     border-radius: 20px; 
+     font-size: 0.9em;
+}
+
+.container {
+     max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 100, 0, 0.1);
+    border: 2px solid #9c5596;
+        }
+        
+h1 {
+     color: #771d6b;
+     text-align: center;
+     margin-bottom: 30px;
+     font-size: 2.5em;
+     text-shadow: 1px 1px 2px #ccc;
+     }
+        
+.form-group {
+     margin-bottom: 20px;
+        }
+        
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #771d6b;
+        }
+        
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+     width: 100%;
+     padding: 12px;
+     border: 2px solid #9c5596;
+     border-radius: 8px;
+     font-size: 16px;
+     background-color: #f9f9f9;
+    transition: border 0.3s;
+        }
+        
+input:focus,
+select:focus,
+textarea:focus {
+     border-color: #e99be5;
+     outline: none;
+     background-color: #fff;
+     }
+        
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
+        }
+        
+        .radio-option, .checkbox-option {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input, .checkbox-option input {
+            margin-right: 10px;
+        }
+        
+        .animal-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .animal-option {
+            flex: 1 0 30%;
+            min-width: 120px;
+        }
+        
+        .animal-option img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        button {
+            background-color: #aa5faa;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #771d6b;
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .animal-option {
+                flex: 1 0 45%;
+            }
+        }
