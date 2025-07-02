@@ -20,7 +20,7 @@ if ($verificar->num_rows > 0) {
   $stmt->bind_param("ssss", $nombre, $email, $telefono, $password);
 
   if ($stmt->execute()) {
-    echo "Registro exitoso. <a href='index.html'>Iniciar sesión</a>";
+    echo "Registro exitoso. <a href='Registro/Index.html'>Iniciar sesión</a>";
   } else {
     echo "Error al registrar: " . $stmt->error;
   }
