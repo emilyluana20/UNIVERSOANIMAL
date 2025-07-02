@@ -85,17 +85,34 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #4caf50;
-  color: white;
   padding: 15px 20px;
   border-radius: 10px;
   font-size: 16px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   z-index: 1000;
+  pointer-events: none;
 }
+
+/* Mostrar mensaje */
 .mensaje.show {
   opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mensajes de éxito y error */
+.mensaje-exito {
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #4caf50;
+  box-shadow: 0 0 12px #4caf50aa;
+}
+
+.mensaje-error {
+  background-color: #ffdddd;
+  color: #a94442;
+  border: 1px solid #a94442;
+  box-shadow: 0 0 12px #a94442aa;
 }
 
 /* Oculta el formulario de registro */
