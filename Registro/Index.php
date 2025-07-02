@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Universo Animal - Login y Registro</title>
-  <link rel="stylesheet" href="Estilo/style.css">
+  <link rel="stylesheet" href="Estilo/style.css"/>
 </head>
+<?php
+if (isset($_GET['msg'])) {
+    $mensajes = [
+        'faltan_datos' => 'Faltan datos.',
+        'correo_no_registrado' => 'Correo no registrado.',
+        'contrasena_incorrecta' => 'Contraseña incorrecta.',
+        'demasiados_intentos' => 'Demasiados intentos fallidos. Esperá e intentá más tarde.',
+        'login_exitoso' => 'Inicio de sesión exitoso.'
+    ];
+    $codigo = $_GET['msg'];
+    if (isset($mensajes[$codigo])) {
+        // Mostramos el mensaje con JS para que tenga animación y estilo
+        echo "<script>window.onload = function() {
+            mostrarMensaje('".$mensajes[$codigo]."', '".($codigo==='login_exitoso' ? "exito" : "error")."');
+        }</script>";
+    }
+}
+?>
 <body>
 
   <div class="form-container">
@@ -19,7 +37,7 @@
       <input type="password" id="password_login" name="password" required>
 
       <button type="submit">Entrar</button>
-      <button type="button" onclick="mostrarRegistro()">Registrate</button>
+      <button type="button" onclick="mostrarRegistro()">¿No tenés una cuenta? Registrate</button>
     </form>
 
     <!-- Formulario de Registro -->
