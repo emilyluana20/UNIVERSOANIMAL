@@ -15,7 +15,7 @@
         <nav class="menu">
             <a href="index.php" class="styled-link">Inicio</a>
             <a href="pages/" class="styled-link">Búsqueda</a>
-            <a href="pages/" class="styled-link">Feed</a>
+            <a href="redsocial/publicar.php" class="styled-link">Feed</a>
             <a href="pages/" class="styled-link">Reencuentros</a>
             <a href="contacto.php" class="styled-link">Contacto</a>
             <button class="boton"><a href="Registro/Index.php">Iniciar sesión</a></button>

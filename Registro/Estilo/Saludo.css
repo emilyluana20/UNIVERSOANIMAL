@@ -1,0 +1,77 @@
+body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+    }
+    .panel {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .saludo {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #5d5a88;
+    }
+    .rol {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #777;
+    }
+    .rol span {
+      font-weight: 700;
+      color: #6a66a3;
+    }
+    .acciones {
+      text-align: left;
+      margin-top: 25px;
+    }
+    .acciones h3 {
+      color: #5d5a88;
+      margin-bottom: 12px;
+    }
+    .acciones ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .acciones li {
+      background: #e3e1f8;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: #4a4474;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .acciones li svg {
+      fill: #6a66a3;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    a.boton-inicio {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #6a66a3;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 700;
+      transition: background-color 0.3s;
+    }
+    a.boton-inicio:hover {
+      background-color: #4a4474;
+    }
