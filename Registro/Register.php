@@ -29,7 +29,7 @@ if ($verificar->num_rows > 0) {
   $stmt->bind_param("sssss", $nombre, $email, $telefono, $password, $rol);
 
   if ($stmt->execute()) {
-    echo "Registro exitoso. <a href='/UNIVERSOANIMAL/redsocial/publicar .php'>Iniciar sesión</a>";
+    echo "Registro exitoso. <a href='index.php'>Iniciar sesión</a>";
   } else {
     echo "Error al registrar: " . $stmt->error;
   }

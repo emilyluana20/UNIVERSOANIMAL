@@ -1,10 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
-    header("Location: Index.php");
-    exit();
-}
+$isAdmin = $_SESSION['rol'] === 'admin';
+$bodyClass = $isAdmin ? 'admin' : '';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,24 +11,27 @@ if (!isset($_SESSION['usuario'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Universo Animal</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="Registro/Estilo/Diseño.css">
 </head>
-<body>
-  <header>
-    <div class="logo">Universo Animal</div>
-    <nav>
-      <a href="datos.php">Cuidados</a>
-      <a href="campañas.php">Campañas</a>
-      <?php if ($_SESSION['rol'] === 'admin'): ?>
-  <a href="Registro/crear_campañias.php">+ Crear campaña</a>
-<?php endif; ?>
-      <a href="redsocial/ver.php">Perdidos</a>
-      <a href="#reencuentros">Reencuentros</a>
-      <a href="contacto.php">Contacto</a>
-      <a href="Registro/logout.php">Cerrar Sesión</a>
-    </nav>
-  </header>
 
+<body class="<?php echo $bodyClass; ?>">
+<header>
+  <div class="logo">Universo Animal</div>
+  <nav>
+    <a href="datos.php">Cuidados</a>
+    <a href="campañas.php">Campañas</a>
+    <?php if ($_SESSION['rol'] === 'admin'): ?>
+      <a href="Registro/crear_campañias.php">+ Crear campaña</a>
+      <a href="tabla.php">- Eliminar Usuario</a>
+    <?php endif; ?>
+    <a href="redsocial/ver.php">Perdidos</a>
+    <a href="#reencuentros">Reencuentros</a>
+    <a href="contacto.php">Contacto</a>
+    <a href="Registro/logout.php">Cerrar Sesión</a>
+  </nav>
+</header>
+<main class="contenido-principal">
   <section class="hero">
     <div class="hero-content">
       <h1>Bienvenid@ a Universo Animal</h1>
@@ -80,10 +82,9 @@ if (!isset($_SESSION['usuario'])) {
   <section id="perdidos" class="seccion">
     <h2>Ayudanos a reunir familias</h2>
     <p>Publicá o buscá mascotas perdidas en tu ciudad. Junt@s podemos hacer la diferencia.</p>
-   <?php if ($_SESSION['rol'] === 'usuario'): ?>
-  <a href="publicar_perdido.php" class="btn-secundario">Publicar perrito perdido</a>
-<?php endif; ?>
-
+    <?php if ($_SESSION['rol'] === 'usuario'): ?>
+      <a href="publicar_perdido.php" class="btn-secundario">Publicar perrito perdido</a>
+    <?php endif; ?>
   </section>
 
   <section id="reencuentros" class="seccion">
@@ -117,5 +118,26 @@ if (!isset($_SESSION['usuario'])) {
       <p>Desarrollado con 🐾 por Universo Animal</p>
     </div>
   </footer>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggleSidebar');
+  const sidebar = document.querySelector('.sidebar');
+
+  toggleBtn?.addEventListener('click', () => {
+    document.body.classList.toggle('sidebar-visible');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (
+      document.body.classList.contains('sidebar-visible') &&
+      !sidebar.contains(e.target) &&
+      e.target !== toggleBtn
+    ) {
+      document.body.classList.remove('sidebar-visible');
+    }
+  });
+});
+</script>
 </body>
 </html>
