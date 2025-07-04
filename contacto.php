@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos/contacto.css">
-    <title>Contacto - Universo Animal</title>
+    <link rel="stylesheet" href="estiloS/contacto.css?v=<?php echo time(); ?>">
+    <title>Contacto | Universo Animal</title>
 </head>
+
+<header>
+   <nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-container">
+            <span class="logo">
+                <img src="https://th.bing.com/th/id/R.1d45634a6f39b237c765ac3a5cea2837?rik=ywGoR7yGXtrNZQ&pid=ImgRaw&r=0" alt="Logo" class="logo-img"> Universo Animal
+            </span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">
+                <span class="link-icon">🐾</span> Inicio</a>
+            <a href="#" class="nav-link active">
+                <span class="link-icon">📋</span> Contacto</a>
+        </div>
+    </div>
+</nav>
+</header>
 <body>
     <div class="container">
         <h1>🐾 Contáctanos 🐾</h1>
@@ -48,7 +66,7 @@
             
             <!-- Preferencias animales -->
             <div class="form-group">
-                <label>Animales de interés (selecciona varios si lo deseas)</label>
+                <label>Animal de interés (selecciona los dos si lo deseas)</label>
                 <div class="animal-selection">
                     <div class="animal-option">
                         <input type="checkbox" id="animal-perro" name="animales[]" value="perro">
@@ -57,22 +75,6 @@
                     <div class="animal-option">
                         <input type="checkbox" id="animal-gato" name="animales[]" value="gato">
                         <label for="animal-gato" alt="Gato"> Gatos</label>
-                    </div>
-                    <div class="animal-option">
-                        <input type="checkbox" id="animal-ave" name="animales[]" value="ave">
-                        <label for="animal-ave" alt="Ave"> Aves</label>
-                    </div>
-                    <div class="animal-option">
-                        <input type="checkbox" id="animal-roedor" name="animales[]" value="roedor">
-                        <label for="animal-roedor"alt="Roedor"> Roedores</label>
-                    </div>
-                    <div class="animal-option">
-                        <input type="checkbox" id="animal-reptil" name="animales[]" value="reptil">
-                        <label for="animal-reptil" alt="Reptil"> Reptiles</label>
-                    </div>
-                    <div class="animal-option">
-                        <input type="checkbox" id="animal-otro" name="animales[]" value="otro">
-                        <label for="animal-otro" alt="Otro"> Otros</label>
                     </div>
                 </div>
             </div>
@@ -112,7 +114,7 @@
             <!-- Mensaje -->
             <div class="form-group">
                 <label for="mensaje" class="required">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" required placeholder="Por favor, describe tu consulta con detalle..."></textarea>
+                <textarea id="mensaje" name="mensaje" required placeholder="Por favor, describe tu consulta con más detalle..."></textarea>
             </div>
             
             <!-- Preferencias de contacto -->
@@ -131,13 +133,6 @@
                         <input type="checkbox" id="contacto-whatsapp" name="contacto[]" value="whatsapp">
                         <label for="contacto-whatsapp">WhatsApp</label>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Newsletter -->
-            <div class="form-group">
-                <div class="checkbox-option">
-                    <input type="checkbox" id="newsletter" name="newsletter" checked>
                 </div>
             </div>
             

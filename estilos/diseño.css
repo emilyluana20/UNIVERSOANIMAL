@@ -62,9 +62,37 @@ body {
     color: #bb6cc5;
 }
 
-.styled-link:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    flex-direction: column;
+}
+
+.submenu a {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #8f7e7e;
+    font-size: 16px;
+}
+
+.submenu a:hover {
+    color: #bb6cc5;
+}
+
+.dropdown:hover .submenu {
+    display: flex;
 }
 
 /* BOTÓN */
@@ -92,6 +120,7 @@ body {
 /* CONTENEDOR PRINCIPAL */
 .contenedor-principal {
     padding: 2rem;
+    background-color: #d7e9f8;
 }
 
 .contenedor {
@@ -106,9 +135,9 @@ body {
 
 .imagen-principal {
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     height: auto;
-    border-radius: 10px;
+    margin-right: 80px;
 }
 
 .texto {
@@ -158,7 +187,8 @@ body {
 .footerContainer {
     width: 100%;
     padding: 40px 30px 20px;
-    background-color: #282828;
+    background-image: url('../img/footeer.jpg');
+    background-size: cover;
 }
 
 .logos {
@@ -222,8 +252,6 @@ body {
 .footerBotton {
     color: #c0c0c0;
 }
-
-
 
 /* MEDIA QUERIES PARA RESPONSIVE */
 @media (max-width: 992px) {
@@ -358,7 +386,7 @@ body {
 
 /*VER.PHP*/
 
-h1 {
+.titu {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 30px;
@@ -367,33 +395,59 @@ h1 {
     padding-bottom: 15px;
 }
 
-h1::after {
+.titu::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
-    height: 4px;
+    height: 3px;
     background-color: #de59ff;
     border-radius: 2px;
 }
 
+.boton-publicar-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.boton-publicar {
+  background-color: #f5aaff;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.aviso-login {
+  text-align: center;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+
 /* Contenedor principal */
-.contenedor {
-    max-width: 800px;
+.conten {
+    max-width: 700px;
     margin: 0 auto;
     display: grid;
-    grid-gap: 25px;
+    grid-gap: 20px;
+    padding: 0 15px;
 }
 
 /* Tarjetas de publicaciones */
 .publicacion {
+    max-width: 100%;
     background: white;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    padding: 20px;
+    padding: 15px;
+    font-size: 0.95em;
 }
 
 .publicacion h2 {
@@ -510,6 +564,18 @@ h1::after {
     background-color: #c21cb4;
 }
 
+.botones-accion {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start; /* para que textarea no desarme la alineación */
+  flex-wrap: wrap; /* para que se acomode en pantallas chicas */
+}
+
+.botones-accion form,
+.botones-accion a {
+  margin: 0; /* eliminar espacios por defecto */
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .contenedor {
@@ -525,3 +591,64 @@ h1::after {
         padding: 15px;
     }
 }
+
+/*BAÑOS*/
+
+.bath-info {
+    padding: 2rem;
+    width: 100px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    width: 100%;
+  }
+
+  .bath-info h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .species-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .species-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 5px 8px 12px rgba(0, 0, 0, 0.05);
+    flex: 1 1 450px;
+  }
+
+  .species-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .species-box p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .species-box ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .species-box li {
+    margin-bottom: 0.5rem;
+  }
+
+  .species-box strong {
+    color: #444;
+  }
+
+  @media (max-width: 600px) {
+    .species-section {
+      flex-direction: column;
+    }
+  }

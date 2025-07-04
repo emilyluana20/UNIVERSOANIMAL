@@ -20,21 +20,29 @@ $resultado = $conexion->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Feed | Universo Animal</title>
-    <link rel="stylesheet" href="/UNIVERSOANIMAL/estilos/diseño.css">
+    <link rel="stylesheet" href="../estilos/diseño.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
-    <header class="Encabezado">
+<header class="Encabezado">
         <div class="logo-container">
-            <img src="/UNIVERSOANIMAL/img/logo.png">
+            <img src="../img/logo.png">
         </div>
         <nav class="menu">
-            <a href="/UNIVERSOANIMAL/index.php" class="styled-link">Inicio</a>
             <a href="pages/" class="styled-link">Búsqueda</a>
-            <a href="/UNIVERSOANIMAL/datos.php" class="styled-link">Datos</a>
+            <a href="redsocial/ver.php" class="styled-link">Feed</a>
+            <div class="dropdown">
+            <a href="" class="styled-link">Datos</a>
+            <div class="submenu">
+               <a href="#">Desparacitación</a>
+               <a href="#">Pulgas y garrapatas</a>
+               <a href="datos.php">Baños</a>
+               <a href="#">Edades</a>
+            </div>
+            </div>
             <a href="pages/" class="styled-link">Reencuentros</a>
-            <a href="/UNIVERSOANIMAL/contacto.php" class="styled-link">Contacto</a>
-            <button class="boton"><a href="/UNIVERSOANIMAL/Registro/Index.php">Iniciar sesión</a></button>
+            <a href="contacto.php" class="styled-link">Contacto</a>
+            <button class="boton"><a href="Registro/Index.php">Iniciar sesión</a></button>
         </nav>
         <button class="menu-hamburguesa" aria-label="Menú">
             <span></span>
@@ -45,9 +53,17 @@ $resultado = $conexion->query($sql);
 
 <br><br>
 
-    <h1>Subi a tu mascota perdida</h1>
+    <h1 class="titu">Subi a tu mascota perdida</h1>
 
-    <div class="contenedor">
+    <?php if (isset($_SESSION['usuario_id'])): ?>
+    <div class="boton-publicar-container">
+        <a href="publicar.php" class="boton-publicar">+ Nueva publicación</a>
+    </div>
+<?php else: ?>
+    <p class="aviso-login">Iniciá sesión para poder publicar una mascota perdida.</p>
+<?php endif; ?>
+
+    <div class="conten">
     <?php while($fila = $resultado->fetch_assoc()): ?>
         <div class="publicacion">
             <strong>Publicado por: <?php echo htmlspecialchars($fila['nombre_usuario']); ?></strong>
@@ -74,7 +90,7 @@ $resultado = $conexion->query($sql);
                     <div class="comentario">
                         <strong><?php echo htmlspecialchars($coment['nombre']); ?>:</strong>
                         <?php echo htmlspecialchars($coment['texto']); ?>
-                        <small><?php echo $coment['fecha']; ?></small>
+                     <small><?php echo $coment['fecha']; ?></small>
                     </div>
                 <?php endwhile; ?>
 

@@ -3,168 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../estilos/diseño.css">
   <title>Publicar | Universo Animal</title>
+  
   <style>
-    /* Estilos generales */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
+    .formuulario {
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
     }
-    
-    /* Contenedor principal */
-    h1 {
-      color: #2c3e50;
-      margin: 30px 0;
-      text-align: center;
-      font-size: 2.2rem;
-      position: relative;
-      padding-bottom: 10px;
-    }
-    
-    h1::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background-color: #3498db;
-      border-radius: 2px;
-    }
-    
-    /* Formulario */
+
     form {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      padding: 30px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 35px;
       width: 100%;
       max-width: 600px;
       margin-bottom: 30px;
+      transition: box-shadow 0.3s ease;
+      background-image: url(https://i.pinimg.com/736x/6f/7a/ae/6f7aaef160767cfaca03c8c0c1869842.jpg);
     }
-    
-    /* Campos del formulario */
+
+    form:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
     input[type="text"],
     textarea,
     input[type="file"] {
       width: 100%;
-      padding: 12px 15px;
+      padding: 14px 18px;
       margin-bottom: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+      border: 1px solid #d0d0d0;
+      border-radius: 12px;
       font-size: 1rem;
-      transition: all 0.3s ease;
+      transition: border 0.3s, box-shadow 0.3s;
     }
-    
-    input[type="text"] {
-      height: 50px;
+
+    input[type="text"]:focus,
+    textarea:focus {
+      outline: none;
+      border-color:rgb(224, 103, 248);
+      
     }
-    
+
     textarea {
       min-height: 150px;
       resize: vertical;
     }
-    
+
     input[type="file"] {
-      padding: 10px;
-      background-color: #f8f9fa;
+      background-color: #f0f0f0;
+      cursor: pointer;
     }
-    
-    input[type="text"]:focus,
-    textarea:focus {
-      outline: none;
-      border-color: #3498db;
-      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-    }
-    
-    /* Placeholders */
+
     ::placeholder {
-      color: #95a5a6;
-      opacity: 1;
+      color: #a0a0a0;
     }
-    
-    /* Botón de enviar */
+
     button[type="submit"] {
-      background-color: #3498db;
+      background: linear-gradient(135deg,rgb(201, 143, 235),rgb(211, 121, 219));
       color: white;
       border: none;
-      padding: 14px 20px;
-      border-radius: 8px;
+      padding: 14px 25px;
+      border-radius: 12px;
       font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      font-weight: bold;
       width: 100%;
-      font-weight: 600;
+      cursor: pointer;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
+      transition: 0.3s ease, transform 0.2s ease;
     }
-    
+
     button[type="submit"]:hover {
-      background-color: #2980b9;
+      background: linear-gradient(135deg,rgb(172, 92, 226),rgb(202, 113, 243));
       transform: translateY(-2px);
     }
-    
+
     button[type="submit"]:active {
       transform: translateY(0);
     }
-    
-    /* Diseño responsive */
-    @media (max-width: 768px) {
-      body {
-        padding: 15px;
+
+    @media (max-width: 600px) {
+      form {
+        padding: 25px;
       }
-      
+
       h1 {
         font-size: 1.8rem;
-        margin: 20px 0;
-      }
-      
-      form {
-        padding: 20px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-      
-      input[type="text"],
-      textarea,
-      input[type="file"] {
-        padding: 10px 12px;
-        margin-bottom: 15px;
-      }
-      
-      button[type="submit"] {
-        padding: 12px;
       }
     }
   </style>
+
 </head>
 <body>
 
-  <h1>Publicar Mascota Perdida</h1>
-  <form action="subir.php" method="POST" enctype="multipart/form-data">
+<header class="Encabezado">
+        <div class="logo-container">
+            <img src="img/logo.png">
+        </div>
+        <nav class="menu">
+            <a href="pages/" class="styled-link">Búsqueda</a>
+            <a href="redsocial/ver.php" class="styled-link">Feed</a>
+            <div class="dropdown">
+            <a href="" class="styled-link">Datos</a>
+            <div class="submenu">
+               <a href="#">Desparacitación</a>
+               <a href="#">Pulgas y garrapatas</a>
+               <a href="datos.php">Baños</a>
+               <a href="#">Edades</a>
+            </div>
+            </div>
+            <a href="pages/" class="styled-link">Reencuentros</a>
+            <a href="contacto.php" class="styled-link">Contacto</a>
+            <button class="boton"><a href="Registro/Index.php">Iniciar sesión</a></button>
+        </nav>
+        <button class="menu-hamburguesa" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+  <h1 class="titu">Publicar a tu mascota perdida</h1>
+
+  <div class="formuulario">
+    <form action="subir.php" method="POST" enctype="multipart/form-data">
     <input type="text" name="nombre" placeholder="Nombre de la mascota" required>
     <textarea name="descripcion" placeholder="Descripción de la mascota" required></textarea>
     <input type="file" name="foto" accept="image/*" required>
     <button type="submit">Publicar</button>
   </form>
+  </div>
 
 </body>
 </html>
