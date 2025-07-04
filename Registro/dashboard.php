@@ -55,7 +55,7 @@ if (!isset($_SESSION['usuario'])) {
     </div>
     <?php endif; ?>
 
-    <a href="inicio.php" class="boton-inicio">Ir a página inicial</a>
+    <a href="../pagina.php" class="boton-inicio">Ir a página inicial</a>
   </div>
 </body>
 </html>
