@@ -18,15 +18,15 @@ if (!isset($_SESSION['usuario'])) {
   <header>
     <div class="logo">Universo Animal</div>
     <nav>
-      <a href="#cuidados">Cuidados</a>
+      <a href="datos.php">Cuidados</a>
       <a href="campañas.php">Campañas</a>
       <?php if ($_SESSION['rol'] === 'admin'): ?>
-  <a href="crear_campañias.php">+ Crear campaña</a>
+  <a href="Registro/crear_campañias.php">+ Crear campaña</a>
 <?php endif; ?>
-      <a href="#perdidos">Perdidos</a>
+      <a href="redsocial/ver.php">Perdidos</a>
       <a href="#reencuentros">Reencuentros</a>
-      <a href="#contacto">Contacto</a>
-      <a href="logout.php">Cerrar Sesión</a>
+      <a href="contacto.php">Contacto</a>
+      <a href="Registro/logout.php">Cerrar Sesión</a>
     </nav>
   </header>
 
@@ -43,17 +43,17 @@ if (!isset($_SESSION['usuario'])) {
     <p>Información clara y confiable para que tu mascota esté sana, feliz y segura.</p>
     <div class="cards-grid">
       <div class="card">
-        <img src="imagenes/Vacunación1.jpg" alt="Vacunación">
+        <img src="Registro/imagenes/Vacunación1.jpg" alt="Vacunación">
         <h3>Vacunación</h3>
         <p>Conocé el calendario de vacunas obligatorio y preventivo para cada etapa.</p>
       </div>
       <div class="card">
-        <img src="imagenes/Desparacitación.jpg" alt="Desparasitación">
+        <img src="Registro/imagenes/Desparacitación.jpg" alt="Desparasitación">
         <h3>Desparasitación</h3>
         <p>Protegé a tu mascota de parásitos internos y externos con los tratamientos adecuados.</p>
       </div>
       <div class="card">
-        <img src="imagenes/Baños.webp" alt="Higiene">
+        <img src="Registro/imagenes/baños.webp" alt="Higiene">
         <h3>Higiene</h3>
         <p>Tips para mantener a tu mascota limpia, sana y cómoda en casa.</p>
       </div>
@@ -91,15 +91,15 @@ if (!isset($_SESSION['usuario'])) {
     <p>Gracias a tu ayuda, muchas mascotas volvieron a casa. Estas son algunas de esas historias.</p>
     <div class="galeria-reencuentros">
       <div class="card">
-        <img src="imagenes/Reencuentro1.jpeg" alt="Reencuentro 1">
+        <img src="Registro/imagenes/Reencuentro1.jpeg" alt="Reencuentro 1">
         <p>¡Volvió a casa después de 2 semanas!</p>
       </div>
       <div class="card">
-        <img src="imagenes/Reencuentro2.jpeg" alt="Reencuentro 2">
+        <img src="Registro/imagenes/Reencuentro2.jpeg" alt="Reencuentro 2">
         <p>Reencuentro con su familia humana 💜</p>
       </div>
       <div class="card">
-        <img src="imagenes/Reencuentro3.jpeg" alt="Reencuentro 3">
+        <img src="Registro/imagenes/Reencuentro3.jpeg" alt="Reencuentro 3">
         <p>Gracias a la difusión, fue encontrado</p>
       </div>
     </div>
