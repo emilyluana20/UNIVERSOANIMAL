@@ -7,7 +7,7 @@ if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
-$sql = "SELECT m.*, u.nombre AS nombre_usuario 
+$sql = "SELECT m.*, m.usuario_id, u.nombre AS nombre_usuario 
 FROM mascotas_perdidas m
 LEFT JOIN usuarios u ON m.usuario_id = u.id
 ORDER BY m.fecha DESC";
@@ -20,7 +20,7 @@ $resultado = $conexion->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Feed | Universo Animal</title>
-    <link rel="stylesheet" href="../estilos/diseño.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/UNIVERSOANIMAL/estilos/diseño.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
@@ -136,6 +136,7 @@ $resultado = $conexion->query($sql);
 
     <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script> 
     <script  nomodule  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
+    <script src="/UNIVERSOANIMAL/prueba.js"></script>
 
 </body>
 </html>

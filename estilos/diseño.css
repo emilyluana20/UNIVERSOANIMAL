@@ -564,18 +564,6 @@ body {
     background-color: #c21cb4;
 }
 
-.botones-accion {
-  display: flex;
-  gap: 15px;
-  align-items: flex-start; /* para que textarea no desarme la alineación */
-  flex-wrap: wrap; /* para que se acomode en pantallas chicas */
-}
-
-.botones-accion form,
-.botones-accion a {
-  margin: 0; /* eliminar espacios por defecto */
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
     .contenedor {
@@ -652,3 +640,62 @@ body {
       flex-direction: column;
     }
   }
+
+  /*editar.php*/
+
+.contenedor-editar {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.titulo-editar {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.formulario-editar label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: bold;
+}
+
+.formulario-editar input[type="text"],
+.formulario-editar textarea,
+.formulario-editar input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.imagen-actual img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.boton-guardar {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.boton-guardar:hover {
+    background-color: #218838;
+}

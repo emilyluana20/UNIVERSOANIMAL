@@ -22,7 +22,7 @@
       max-width: 600px;
       margin-bottom: 30px;
       transition: box-shadow 0.3s ease;
-      background-image: url(https://i.pinimg.com/736x/6f/7a/ae/6f7aaef160767cfaca03c8c0c1869842.jpg);
+      background-image: url(https://i.pinimg.com/736x/d4/c9/20/d4c920c9f72ed2a039cc97a96887e39d.jpg);
     }
 
     form:hover {
@@ -102,7 +102,7 @@
 
 <header class="Encabezado">
         <div class="logo-container">
-            <img src="img/logo.png">
+            <img src="../img/logo.png">
         </div>
         <nav class="menu">
             <a href="pages/" class="styled-link">Búsqueda</a>

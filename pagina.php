@@ -19,7 +19,7 @@ $bodyClass = $isAdmin ? 'admin' : '';
 <header>
   <div class="logo">Universo Animal</div>
   <nav>
-    <a href="datos.php">Cuidados</a>
+    <a href="baños.php">Cuidados</a>
     <a href="campañas.php">Campañas</a>
     <?php if ($_SESSION['rol'] === 'admin'): ?>
       <a href="Registro/crear_campañias.php">+ Crear campaña</a>
