@@ -14,29 +14,43 @@ $bodyClass = $isAdmin ? 'admin' : '';
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="Registro/Estilo/Diseño.css">
 </head>
-
 <body class="<?php echo $bodyClass; ?>">
-<header>
-  <div class="logo">Universo Animal</div>
-  <nav>
-    <a href="datos.php">Cuidados</a>
-    <a href="campañas.php">Campañas</a>
-    <?php if ($_SESSION['rol'] === 'admin'): ?>
-      <a href="Registro/crear_campañias.php">+ Crear campaña</a>
-      <a href="tabla.php">- Eliminar Usuario</a>
-    <?php endif; ?>
-    <a href="redsocial/ver.php">Perdidos</a>
-    <a href="#reencuentros">Reencuentros</a>
-    <a href="contacto.php">Contacto</a>
-    <a href="Registro/logout.php">Cerrar Sesión</a>
-  </nav>
+
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <i class='bx bx-paw'></i> Universo Animal
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class='bx bx-menu'></i>
+    </div>
+    <nav id="navMenu" class="nav-links">
+      <a href="#">Cuidados</a>
+      <a href="callamulloproyecto/index.php">Campañas</a>
+      <?php if ($_SESSION['rol'] === 'admin'): ?>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Admin <i class='bx bx-chevron-down'></i></a>
+          <div class="dropdown-menu">
+            <a href="Registro/crear_campañias.php">+ Crear campaña</a>
+            <a href="tabla.php">- Eliminar Usuario</a>
+
+          </div>
+        </div>
+      <?php endif; ?>
+      <a href="redsocial/ver.php">Perdidos</a>
+      <a href="#">Reencuentros</a>
+      <a href="contacto.php">Contacto</a>
+      <a href="Registro/logout.php">Cerrar Sesión</a>
+    </nav>
+  </div>
 </header>
+
+
 <main class="contenido-principal">
   <section class="hero">
     <div class="hero-content">
       <h1>Bienvenid@ a Universo Animal</h1>
       <p>Un espacio pensado para el cuidado, la protección y el bienestar de tus mascotas.</p>
-      <a href="#cuidados" class="btn-principal">Conocé más</a>
     </div>
   </section>
 
@@ -45,7 +59,7 @@ $bodyClass = $isAdmin ? 'admin' : '';
     <p>Información clara y confiable para que tu mascota esté sana, feliz y segura.</p>
     <div class="cards-grid">
       <div class="card">
-        <img src="Registro/imagenes/Vacunación1.jpg" alt="Vacunación">
+        <img  class="img"src="Registro/imagenes/Vacunación1.jpg" alt="Vacunación">
         <h3>Vacunación</h3>
         <p>Conocé el calendario de vacunas obligatorio y preventivo para cada etapa.</p>
       </div>
@@ -119,25 +133,19 @@ $bodyClass = $isAdmin ? 'admin' : '';
     </div>
   </footer>
 </main>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('toggleSidebar');
-  const sidebar = document.querySelector('.sidebar');
+function toggleMenu() {
+  const nav = document.getElementById("navMenu");
+  nav.classList.toggle("active");
+}
 
-  toggleBtn?.addEventListener('click', () => {
-    document.body.classList.toggle('sidebar-visible');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (
-      document.body.classList.contains('sidebar-visible') &&
-      !sidebar.contains(e.target) &&
-      e.target !== toggleBtn
-    ) {
-      document.body.classList.remove('sidebar-visible');
-    }
-  });
-});
+function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdownMenu = event.target.closest(".dropdown").querySelector(".dropdown-menu");
+  dropdownMenu.style.display = dropdownMenu.style.display === "flex" ? "none" : "flex";
+}
 </script>
+
 </body>
 </html>
