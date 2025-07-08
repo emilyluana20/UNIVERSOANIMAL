@@ -1,6 +1,6 @@
 <?php
 session_start();
-$isAdmin = $_SESSION['rol'] === 'admin';
+$isAdmin = isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin';
 $bodyClass = $isAdmin ? 'admin' : '';
 ?>
 
@@ -15,21 +15,6 @@ $bodyClass = $isAdmin ? 'admin' : '';
   <link rel="stylesheet" href="Registro/Estilo/Diseño.css">
 </head>
 <body class="<?php echo $bodyClass; ?>">
-<header>
-  <div class="logo">Universo Animal</div>
-  <nav>
-    <a href="baños.php">Cuidados</a>
-    <a href="campañas.php">Campañas</a>
-    <?php if ($_SESSION['rol'] === 'admin'): ?>
-      <a href="Registro/crear_campañias.php">+ Crear campaña</a>
-      <a href="tabla.php">- Eliminar Usuario</a>
-    <?php endif; ?>
-    <a href="redsocial/ver.php">Perdidos</a>
-    <a href="#reencuentros">Reencuentros</a>
-    <a href="contacto.php">Contacto</a>
-    <a href="Registro/logout.php">Cerrar Sesión</a>
-  </nav>
-
 <header class="main-header">
   <div class="header-container">
     <div class="logo">
@@ -41,7 +26,7 @@ $bodyClass = $isAdmin ? 'admin' : '';
     <nav id="navMenu" class="nav-links">
       <a href="#">Cuidados</a>
       <a href="callamulloproyecto/index.php">Campañas</a>
-      <?php if ($_SESSION['rol'] === 'admin'): ?>
+<?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'usuario'): ?>
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Admin <i class='bx bx-chevron-down'></i></a>
           <div class="dropdown-menu">
@@ -63,7 +48,7 @@ $bodyClass = $isAdmin ? 'admin' : '';
 <main class="contenido-principal">
   <section class="hero">
     <div class="hero-content">
-      <h1>Bienvenid@ a Universo Animal</h1>
+      <h1>Bienvenida a Universo Animal</h1>
       <p>Un espacio pensado para el cuidado, la protección y el bienestar de tus mascotas.</p>
     </div>
   </section>

@@ -134,10 +134,11 @@ body {
 }
 
 .imagen-principal {
+    isolation: isolate;
     width: 100%;
     max-width: 450px;
     height: auto;
-    margin-right: 80px;
+    margin-right: 120px;
 }
 
 .texto {
@@ -698,4 +699,65 @@ body {
 
 .boton-guardar:hover {
     background-color: #218838;
+}
+
+/*desparacitacion.php*/
+.tarjeta-desparasitacion {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  border: 2px;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Nunito', sans-serif;
+}
+
+.titulo-tarjeta {
+  font-size: 24px;
+  color: #3f3b57;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.subtitulo-tarjeta {
+  font-size: 18px;
+  color: #908ca3;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.texto-tarjeta {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.lista-tarjeta {
+  margin-left: 20px;
+  font-size: 16px;
+  color: #444;
+  list-style-type: disc;
+}
+
+@media (max-width: 480px) {
+  .tarjeta-desparasitacion {
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .titulo-tarjeta {
+    font-size: 20px;
+  }
+
+  .subtitulo-tarjeta {
+    font-size: 16px;
+  }
+
+  .texto-tarjeta,
+  .lista-tarjeta {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 }
