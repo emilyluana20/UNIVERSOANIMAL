@@ -84,7 +84,6 @@ input[type="text"]:focus {
     margin-top: 4px;
 }
 
-
 .list::-webkit-scrollbar {
     width: 8px;
 }
@@ -123,11 +122,11 @@ header {
     text-decoration: none;
     display: flex;
     align-items: center;
+    margin-right: 410px;
 }
 
-.logo:hover {
-    color: var(--light-blue);
-    transition: color 0.3s ease;
+.logo a {
+    text-decoration: none;
 }
 
 .hamburger {
@@ -185,4 +184,14 @@ header {
         padding: 0.75rem;
         text-align: center;
     }
+}
+
+.logoo img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logoo img:hover {
+    transform: scale(1.05);
 }

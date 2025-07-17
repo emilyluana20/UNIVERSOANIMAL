@@ -13,8 +13,7 @@
             <a href="pagina.php"><img src="img/logo.png"></a>
         </div>
         <nav class="menu">
-            <a href="pagina.php" class="styled-link">Inicio</a>
-            <a href="callamulloproyecto/index.php" class="styled-link">Búsqueda</a>
+            <a href="callamulloproyecto/index.php" class="styled-link">Campañas</a>
             <a href="redsocial/ver.php" class="styled-link">Feed</a>
             <div class="dropdown">
             <a href="baños.php" class="styled-link">Datos</a>

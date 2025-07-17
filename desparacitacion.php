@@ -10,11 +10,10 @@
 <body>
     <header class="Encabezado">
         <div class="logo-container">
-            <img src="img/logo.png">
+            <a href="/UNIVERSOANIMAL/pagina.php"><img src="img/logo.png"></a>
         </div>
         <nav class="menu">
-            <a href="pagina.php" class="styled-link">Inicio</a>
-            <a href="callamulloproyecto/index.php" class="styled-link">Búsqueda</a>
+            <a href="callamulloproyecto/index.php" class="styled-link">Campañas</a>
             <a href="redsocial/ver.php" class="styled-link">Feed</a>
             <div class="dropdown">
             <a href="desparacitacion.php" class="styled-link">Datos</a>
@@ -25,7 +24,7 @@
             </div>
             </div>
             <a href="contacto.php" class="styled-link">Contacto</a>
-            <button class="boton"><a href="../Registro/logout.php">Cerrar sesión</a></button>
+            <button class="boton"><a href="/UNIVERSOANIMAL/Registro/logout.php">Cerrar sesión</a></button>
         </nav>
         <button class="menu-hamburguesa" aria-label="Menú">
             <span></span>

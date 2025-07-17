@@ -131,17 +131,9 @@ $resultado = $conexion->query($sql);
             <li><ion-icon name="logo-facebook"></ion-icon></li>
             <li><ion-icon name="logo-twitter"></ion-icon></li>
         </div>
-        <div class="footerNav">
-           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Busqueda</a></li>
-            <li><a href="">Datos</a></li>
-            <li><a href="">Feed</a></li>
-           </ul>
-        </div>
         <div class="footerBotton">
             <p>Copyright &copy;2025 | Derechos reservados a Universo Animal</p>
-        </div>
+</div>
 
     <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script> 
     <script  nomodule  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>

@@ -38,7 +38,6 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
     </div>
 <?php endif; ?>
 
-
 <section class="search-section">
     <h2>Buscar Lugares, Fechas y Horarios</h2>
     <input type="text" id="searchInput" placeholder="Escribí para buscar...">

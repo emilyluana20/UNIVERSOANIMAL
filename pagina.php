@@ -21,6 +21,9 @@ $bodyClass = $isAdmin ? 'admin' : '';
 <header class="main-header">
   <div class="header-container">
     <div class="logo">
+      <div class="logo-container">
+            <a href="/UNIVERSOANIMAL/pagina.php"><img src="img/logo.png"></a>
+      </div>
       <i class='bx bx-paw'></i> Universo Animal
     </div>
     <div class="hamburger" onclick="toggleMenu()">

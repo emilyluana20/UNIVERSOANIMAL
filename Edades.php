@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="estilos/edad.css" />
+    <link rel="stylesheet" href="estilos/edad.css?v=<?php echo time(); ?>"/>
+    <link rel="stylesheet" href="estilos/diseño.css">
     <title>Edades | Universo animal</title>
   </head>
 
   <body>
     <div class="menu">
+      <div class="logo-container">
+            <a href="/UNIVERSOANIMAL/pagina.php"><img src="img/logo.png"></a>
+      </div>
       <div class="logo">Universo Animal</div>
       <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
       <nav class="nav">
@@ -162,5 +166,8 @@
         <div class="footerBotton">
             <p>Copyright &copy;2025 | Derechos reservados a Universo Animal</p>
         </div>
+
+        <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script> 
+        <script  nomodule  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
   </body>
 </html>

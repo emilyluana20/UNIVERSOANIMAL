@@ -27,15 +27,17 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Campañas | Universo Animal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 </head>
 <body>
 <header>
+    <div class="logoo">
+        <a href="/UNIVERSOANIMAL/pagina.php"><img src="../img/logo.png"></a>
+    </div>
     <div class="logo">Universo Animal</div>
     <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
     <nav class="nav">
         <a href="/UNIVERSOANIMAL/baños.php">Cuidados</a>
-        <a href="/UNIVERSOANIMAL/pagina.php">Atras</a>
         <?php if ($_SESSION['rol'] === 'admin'): ?>
             <a href="../Registro/crear_campañias.php">+ Crear campaña</a>
         <?php endif; ?>

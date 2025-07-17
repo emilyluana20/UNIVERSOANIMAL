@@ -51,6 +51,7 @@ img {
   font-size: 1.8rem;
   font-weight: bold;
   color: #6c63ff; /* mismo color para el logo */
+  margin-right: 390px;
 }
 
 nav a {
@@ -73,8 +74,6 @@ nav a:hover {
   color: #6c63ff;
   cursor: pointer;
 }
-
-
 
 /*contenido*/
 

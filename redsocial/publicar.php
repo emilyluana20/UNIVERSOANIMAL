@@ -102,10 +102,10 @@
 
 <header class="Encabezado">
         <div class="logo-container">
-            <img src="../img/logo.png">
+            <a href="/UNIVERSOANIMAL/pagina.php"><img src="../img/logo.png"></a>
         </div>
         <nav class="menu">
-            <a href="pages/" class="styled-link">Búsqueda</a>
+            <a href="/UNIVERSOANIMAL/callamulloproyecto/index.php" class="styled-link">Campañas</a>
             <a href="redsocial/ver.php" class="styled-link">Feed</a>
             <div class="dropdown">
             <a href="" class="styled-link">Datos</a>
@@ -116,9 +116,8 @@
                <a href="#">Edades</a>
             </div>
             </div>
-            <a href="pages/" class="styled-link">Reencuentros</a>
             <a href="contacto.php" class="styled-link">Contacto</a>
-            <button class="boton"><a href="Registro/Index.php">Iniciar sesión</a></button>
+            <button class="boton"><a href="../Registro/logout.php">Cerrar sesión</a></button>
         </nav>
         <button class="menu-hamburguesa" aria-label="Menú">
             <span></span>
@@ -137,6 +136,20 @@
     <button type="submit">Publicar</button>
   </form>
   </div>
+
+  <div class="footerContainer">
+        <div class="logos">
+            <li><ion-icon name="logo-instagram"></ion-icon></li>
+            <li><ion-icon name="logo-facebook"></ion-icon></li>
+            <li><ion-icon name="logo-twitter"></ion-icon></li>
+        </div>
+        <div class="footerBotton">
+            <p>Copyright &copy;2025 | Derechos reservados a Universo Animal</p>
+  </div>
+
+  <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script> 
+  <script  nomodule  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
+  <script src="/UNIVERSOANIMAL/prueba.js"></script>
 
 </body>
 </html>
