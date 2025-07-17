@@ -24,12 +24,11 @@ include "eliminarperso.php";
     <div class="logo">Universo Animal</div>
     <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
     <nav class="nav">
-      <a href="#cuidados">Cuidados</a>
-      <a href="campañas.php">Campañas</a>
-      <a href="#perdidos">Perdidos</a>
-      <a href="#reencuentros">Reencuentros</a>
-      <a href="#contacto">Contacto</a>
-      <a href="logout.php">Cerrar Sesión</a>
+      <a href="baños.php">Cuidados</a>
+      <a href="callamulloproyecto/index.php">Campañas</a>
+      <a href="redsocial/ver.php">Perdidos</a>
+      <a href="contacto.php">Contacto</a>
+      <a href="Registro/logout.php">Cerrar Sesión</a>
     </nav>
   </header>
 

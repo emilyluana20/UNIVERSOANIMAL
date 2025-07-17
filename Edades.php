@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/edad.css" />
-    <title>Edad</title>
+    <link rel="stylesheet" href="estilos/edad.css" />
+    <title>Edades | Universo animal</title>
   </head>
 
   <body>
@@ -12,12 +12,11 @@
       <div class="logo">Universo Animal</div>
       <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
       <nav class="nav">
-        <a href="#cuidados">Cuidados</a>
-        <a href="campañas.php">Campañas</a>
-        <a href="#perdidos">Perdidos</a>
-        <a href="#reencuentros">Reencuentros</a>
-        <a href="#contacto">Contacto</a>
-        <a href="logout.php">Cerrar Sesión</a>
+        <a href="baños.php">Cuidados</a>
+        <a href="callamulloproyecto/index.php">Campañas</a>
+        <a href="redsocial/ver.php">Perdidos</a>
+        <a href="contacto.php">Contacto</a>
+        <a href="Registro/logout.php">Cerrar Sesión</a>
       </nav>
     </div>
 
@@ -159,15 +158,6 @@
             <li><ion-icon name="logo-instagram"></ion-icon></li>
             <li><ion-icon name="logo-facebook"></ion-icon></li>
             <li><ion-icon name="logo-twitter"></ion-icon></li>
-        </div>
-        <div class="footerNav">
-           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Busqueda</a></li>
-            <li><a href="">Datos</a></li>
-            <li><a href="">Feed</a></li>
-            <li><a href="">Reencuentros</a></li>
-           </ul>
         </div>
         <div class="footerBotton">
             <p>Copyright &copy;2025 | Derechos reservados a Universo Animal</p>

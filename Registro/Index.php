@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Universo Animal - Login y Registro</title>
+  <title>Universo Animal | Login y Registro</title>
   <link rel="stylesheet" href="Estilo/style.css"/>
 </head>
 <?php

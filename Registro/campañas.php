@@ -22,7 +22,7 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Campañas - Universo Animal</title>
+    <title>Campañas | Universo Animal</title>
     <link rel="stylesheet" href="Estilo/campañas.css">
 </head>
 <body>
@@ -53,8 +53,8 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
                 <div class="datetime"><?= htmlspecialchars($campania['horario']) ?> · <?= date("d/m/Y", strtotime($campania['fecha_creacion'])) ?></div>
                 <div class="descripcion"><?= htmlspecialchars($campania['descripcion']) ?></div>
                 <?php if ($rol === 'admin'): ?>
-                    <a href="editar_campañas.php?id=<?= $campania['id'] ?>" class="btn-principal">Editar</a>
-                    <a href="eliminar_Campanias.php?id=<?= $campania['id'] ?>" class="btn-secundario" onclick="return confirm('¿Estás segur@ que querés eliminar esta campaña?')">Eliminar</a>
+                    <a href="editarcam.php?id=<?= $campania['id'] ?>" class="btn-principal">Editar</a>
+                    <a href="eliminarcam.php?id=<?= $campania['id'] ?>" class="btn-secundario" onclick="return confirm('¿Estás segur@ que querés eliminar esta campaña?')">Eliminar</a>
                 <?php endif; ?>
             </li>
         <?php endforeach; ?>

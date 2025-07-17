@@ -26,7 +26,7 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Campañas - Universo Animal</title>
+    <title>Campañas | Universo Animal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,15 +34,14 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
     <div class="logo">Universo Animal</div>
     <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
     <nav class="nav">
-        <a href="#cuidados">Cuidados</a>
-        <a href="inicio.php">Atras</a>
+        <a href="/UNIVERSOANIMAL/baños.php">Cuidados</a>
+        <a href="/UNIVERSOANIMAL/pagina.php">Atras</a>
         <?php if ($_SESSION['rol'] === 'admin'): ?>
-            <a href="crear_campañias.php">+ Crear campaña</a>
+            <a href="../Registro/crear_campañias.php">+ Crear campaña</a>
         <?php endif; ?>
-        <a href="#perdidos">Perdidos</a>
-        <a href="#reencuentros">Reencuentros</a>
-        <a href="#contacto">Contacto</a>
-        <a href="logout.php">Cerrar Sesión</a>
+        <a href="../redsocial/ver.php">Perdidos</a>
+        <a href="/UNIVERSOANIMAL/contacto.php">Contacto</a>
+        <a href="../Registro/logout.php">Cerrar Sesión</a>
     </nav>
 </header>
 
@@ -71,8 +70,8 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
                 <div class="datetime"><?= htmlspecialchars($campania['horario']) ?> · <?= date("d/m/Y", strtotime($campania['fecha_creacion'])) ?></div>
                 <div class="descripcion"><?= htmlspecialchars($campania['descripcion']) ?></div>
                 <?php if ($rol === 'admin'): ?>
-                    <a href="editar_campañas.php?id=<?= $campania['id'] ?>" class="btn-principal">Editar</a>
-                    <a href="eliminar_Campanias.php?id=<?= $campania['id'] ?>" class="btn-secundario" onclick="return confirm('¿Estás segur@ que querés eliminar esta campaña?')">Eliminar</a>
+                    <a href="../Registro/editarcam.php?id=<?= $campania['id'] ?>" class="btn-principal">Editar</a>
+                    <a href="../Registro/eliminarcam.php?id=<?= $campania['id'] ?>" class="btn-secundario" onclick="return confirm('¿Estás segur@ que querés eliminar esta campaña?')">Eliminar</a>
                 <?php endif; ?>
             </li>
         <?php endforeach; ?>

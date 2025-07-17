@@ -1,6 +1,8 @@
 <?php
 session_start();
-$isAdmin = isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin';
+$rol = $_SESSION['rol'] ?? null;
+$isAdmin = $rol === 'admin';
+$isUsuario = $rol === 'usuario';
 $bodyClass = $isAdmin ? 'admin' : '';
 ?>
 
@@ -13,6 +15,7 @@ $bodyClass = $isAdmin ? 'admin' : '';
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="Registro/Estilo/Diseño.css">
+  <link rel="stylesheet" href="estilos/diseño.css">
 </head>
 <body class="<?php echo $bodyClass; ?>">
 <header class="main-header">
@@ -24,26 +27,33 @@ $bodyClass = $isAdmin ? 'admin' : '';
       <i class='bx bx-menu'></i>
     </div>
     <nav id="navMenu" class="nav-links">
-      <a href="#">Cuidados</a>
+      <div class="dropdown">
+        <a href="#">Cuidados</a>
+        <div class="submenu">
+          <a href="desparacitacion.php">Desparacitación</a>
+          <a href="pulgagarra.php">Pulgas y garrapatas</a>
+          <a href="baños.php">Baños</a>
+          <a href="Edades.php">Edades</a>
+        </div>
+      </div>
       <a href="callamulloproyecto/index.php">Campañas</a>
-<?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'usuario'): ?>
+      
+      <?php if ($isAdmin): ?>
         <div class="dropdown">
           <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Admin <i class='bx bx-chevron-down'></i></a>
           <div class="dropdown-menu">
             <a href="Registro/crear_campañias.php">+ Crear campaña</a>
             <a href="tabla.php">- Eliminar Usuario</a>
-
           </div>
         </div>
       <?php endif; ?>
+      
       <a href="redsocial/ver.php">Perdidos</a>
-      <a href="#">Reencuentros</a>
       <a href="contacto.php">Contacto</a>
       <a href="Registro/logout.php">Cerrar Sesión</a>
     </nav>
   </div>
 </header>
-
 
 <main class="contenido-principal">
   <section class="hero">
@@ -58,7 +68,7 @@ $bodyClass = $isAdmin ? 'admin' : '';
     <p>Información clara y confiable para que tu mascota esté sana, feliz y segura.</p>
     <div class="cards-grid">
       <div class="card">
-        <img  class="img"src="Registro/imagenes/Vacunación1.jpg" alt="Vacunación">
+        <img class="img" src="Registro/imagenes/Vacunación1.jpg" alt="Vacunación">
         <h3>Vacunación</h3>
         <p>Conocé el calendario de vacunas obligatorio y preventivo para cada etapa.</p>
       </div>
@@ -95,8 +105,8 @@ $bodyClass = $isAdmin ? 'admin' : '';
   <section id="perdidos" class="seccion">
     <h2>Ayudanos a reunir familias</h2>
     <p>Publicá o buscá mascotas perdidas en tu ciudad. Junt@s podemos hacer la diferencia.</p>
-    <?php if ($_SESSION['rol'] === 'usuario'): ?>
-      <a href="publicar_perdido.php" class="btn-secundario">Publicar perrito perdido</a>
+    <?php if ($isUsuario || $isAdmin): ?>
+    <a href="redsocial/ver.php" class="btn-secundario">Publicar perrito perdido</a>
     <?php endif; ?>
   </section>
 

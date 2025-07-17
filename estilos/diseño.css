@@ -449,6 +449,7 @@ body {
     overflow: hidden;
     padding: 15px;
     font-size: 0.95em;
+    position: relative;
 }
 
 .publicacion h2 {
@@ -686,7 +687,7 @@ body {
 }
 
 .boton-guardar {
-    background-color: #28a745;
+    background-color: #c8c2e7;
     color: #fff;
     padding: 12px 20px;
     border: none;
@@ -698,7 +699,7 @@ body {
 }
 
 .boton-guardar:hover {
-    background-color: #218838;
+    background-color: #908ca3;
 }
 
 /*desparacitacion.php*/
@@ -760,4 +761,49 @@ body {
     font-size: 15px;
     line-height: 1.5;
   }
+}
+
+.menu-opciones {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.submenu-acciones {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 5px;
+  z-index: 99;
+}
+
+.submenu-acciones a,
+.submenu-acciones button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  color: #333;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.submenu-acciones a:hover,
+.submenu-acciones button:hover {
+  background-color: #f2f2f2;
 }

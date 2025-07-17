@@ -12,14 +12,20 @@
     <div class="nav-container">
         <div class="logo-container">
             <span class="logo">
-                <img src="https://th.bing.com/th/id/R.1d45634a6f39b237c765ac3a5cea2837?rik=ywGoR7yGXtrNZQ&pid=ImgRaw&r=0" alt="Logo" class="logo-img"> Universo Animal
+                <img src="img/logo.png" alt="Logo" class="logo-img"> Universo Animal
             </span>
         </div>
         <div class="nav-links">
-            <a href="#" class="nav-link">
-                <span class="link-icon">🐾</span> Inicio</a>
-            <a href="#" class="nav-link active">
-                <span class="link-icon">📋</span> Contacto</a>
+            <a href="pagina.php" class="nav-link">
+                <span class="link-icon"></span>Inicio</a>
+            <a href="baños.php" class="nav-link">
+                <span class="link-icon"></span>Cuidados</a>
+            <a href="callamulloproyecto/index.php" class="nav-link">
+                <span class="link-icon"></span>Campañas</a>
+            <a href="redsocial/ver.php" class="nav-link">
+                <span class="link-icon"></span>Perdidos</a>
+            <a href="Registro/logout.php" class="nav-link">
+                <span class="link-icon"></span>Cerrar sesión</a>
         </div>
     </div>
 </nav>
@@ -97,20 +103,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Disponibilidad -->
-            <div class="form-group">
-                <label for="disponibilidad">Disponibilidad para colaborar</label>
-                <select id="disponibilidad" name="disponibilidad">
-                    <option value="" selected disabled>-- Seleccione una opción --</option>
-                    <option value="mañanas">Mañanas</option>
-                    <option value="tardes">Tardes</option>
-                    <option value="fines">Fines de semana</option>
-                    <option value="ocasional">Ocasionalmente</option>
-                    <option value="completa">Tiempo completo</option>
-                </select>
-            </div>
-            
+
             <!-- Mensaje -->
             <div class="form-group">
                 <label for="mensaje" class="required">Mensaje</label>

@@ -10,23 +10,22 @@
 <body>
     <header class="Encabezado">
         <div class="logo-container">
-            <img src="img/logo.png">
+            <a href="pagina.php"><img src="img/logo.png"></a>
         </div>
         <nav class="menu">
-            <a href="pages/" class="styled-link">Búsqueda</a>
+            <a href="pagina.php" class="styled-link">Inicio</a>
+            <a href="callamulloproyecto/index.php" class="styled-link">Búsqueda</a>
             <a href="redsocial/ver.php" class="styled-link">Feed</a>
             <div class="dropdown">
-            <a href="" class="styled-link">Datos</a>
+            <a href="baños.php" class="styled-link">Datos</a>
             <div class="submenu">
-               <a href="#">Desparacitación</a>
-               <a href="#">Pulgas y garrapatas</a>
-               <a href="datos.php">Baños</a>
-               <a href="#">Edades</a>
+               <a href="desparacitacion.php">Desparacitación</a>
+               <a href="pulgagarra.php">Pulgas y garrapatas</a>
+               <a href="Edades.php">Edades</a>
             </div>
             </div>
-            <a href="pages/" class="styled-link">Reencuentros</a>
             <a href="contacto.php" class="styled-link">Contacto</a>
-            <button class="boton"><a href="Registro/Index.php">Iniciar sesión</a></button>
+            <button class="boton"><a href="/UNIVERSOANIMAL/Registro/logout.php">Cerrar sesión</a></button>
         </nav>
         <button class="menu-hamburguesa" aria-label="Menú">
             <span></span>
@@ -132,15 +131,6 @@
             <li><ion-icon name="logo-instagram"></ion-icon></li>
             <li><ion-icon name="logo-facebook"></ion-icon></li>
             <li><ion-icon name="logo-twitter"></ion-icon></li>
-        </div>
-        <div class="footerNav">
-           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Busqueda</a></li>
-            <li><a href="">Datos</a></li>
-            <li><a href="">Feed</a></li>
-            <li><a href="">Reencuentros</a></li>
-           </ul>
         </div>
         <div class="footerBotton">
             <p>Copyright &copy;2025 | Derechos reservados a Universo Animal</p>

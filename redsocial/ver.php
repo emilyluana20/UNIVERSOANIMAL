@@ -20,6 +20,7 @@ $resultado = $conexion->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Feed | Universo Animal</title>
+    <link rel="stylesheet" href="../estilos/diseño.css">
     <link rel="stylesheet" href="/UNIVERSOANIMAL/estilos/diseño.css?v=<?php echo time(); ?>">
 </head>
 <body>
@@ -42,7 +43,7 @@ $resultado = $conexion->query($sql);
             </div>
             <a href="pages/" class="styled-link">Reencuentros</a>
             <a href="contacto.php" class="styled-link">Contacto</a>
-            <button class="boton"><a href="Registro/Index.php">Iniciar sesión</a></button>
+            <button class="boton"><a href="../Registro/logout.php">Cerrar sesión</a></button>
         </nav>
         <button class="menu-hamburguesa" aria-label="Menú">
             <span></span>
@@ -106,9 +107,18 @@ $resultado = $conexion->query($sql);
                 <?php endif; ?>
             </div>
 
-            <?php if (isset($_SESSION['usuario_id']) && $_SESSION['usuario_id'] == $fila['usuario_id']): ?>
-                <a class="editar-btn" href="editar.php?id=<?php echo $fila['id']; ?>">Editar publicación</a>
-            <?php endif; ?>
+<?php if (isset($_SESSION['usuario_id']) && $_SESSION['usuario_id'] == $fila['usuario_id']): ?>
+    <div class="menu-opciones">
+        <button class="menu-toggle">⋮</button>
+        <div class="submenu-acciones">
+            <a href="editar.php?id=<?php echo $fila['id']; ?>">Editar</a>
+            <form action="eliminar.php" method="POST" onsubmit="return confirm('¿Eliminar esta publicación?');">
+                <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
+                <button type="submit">Eliminar</button>
+            </form>
+        </div>
+    </div>
+<?php endif; ?>
         </div>
     <?php endwhile; ?>
 </div>
@@ -127,7 +137,6 @@ $resultado = $conexion->query($sql);
             <li><a href="">Busqueda</a></li>
             <li><a href="">Datos</a></li>
             <li><a href="">Feed</a></li>
-            <li><a href="">Reencuentros</a></li>
            </ul>
         </div>
         <div class="footerBotton">
@@ -137,6 +146,23 @@ $resultado = $conexion->query($sql);
     <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script> 
     <script  nomodule  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
     <script src="/UNIVERSOANIMAL/prueba.js"></script>
+
+    <script>
+  document.querySelectorAll('.menu-toggle').forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation(); // evita que se cierre al instante
+      const submenu = this.nextElementSibling;
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  // Cerrar cualquier submenú si hacés clic fuera
+  window.addEventListener('click', function() {
+    document.querySelectorAll('.submenu-acciones').forEach(function(menu) {
+      menu.style.display = 'none';
+    });
+  });
+</script>
 
 </body>
 </html>
