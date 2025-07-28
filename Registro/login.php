@@ -4,8 +4,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-include "conexion.php";
+include "Conexion.php";
 
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
 // Inicializar el contador de intentos si no existe
 if (!isset($_SESSION['intentos_login'])) {
     $_SESSION['intentos_login'] = 0;
@@ -58,12 +63,7 @@ if (password_verify($password, $hash)) {
     exit();
 }
 
-$_SESSION['usuario_id'] = $usuario['id'];
-$_SESSION['usuario_nombre'] = $usuario['nombre'];
-
-header("Location: ../redsocial/publicar.php");
-exit;
-
 $stmt->close();
 $conn->close();
+
 ?>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>

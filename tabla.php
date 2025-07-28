@@ -2,7 +2,11 @@
 session_start();
 include "Registro/Conexion.php";
 include "eliminarperso.php";
-
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

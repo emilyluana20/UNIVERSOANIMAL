@@ -6,7 +6,13 @@ if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
     header("Location: index.php");
     exit();
 }
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,7 +23,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
     <div class="container">
         <h1>✅ Campaña eliminada</h1>
         <p>La publicación fue eliminada exitosamente del sistema.</p>
-        <a href="campañas.php">Volver a campañas</a>
+        <a href="../callamulloproyecto/index.php">Volver a campañas🐾</a>
     </div>
 </body>
 </html>

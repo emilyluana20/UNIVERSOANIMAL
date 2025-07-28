@@ -50,26 +50,6 @@ body {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
-
-/* === BOTONES === */
-.btn-principal, .btn-secundario {
-  background-color: #a59ff7;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
-  display: inline-block;
-}
-
-.btn-principal:hover, .btn-secundario:hover {
-  background-color: #8c87e0;
-  transform: scale(1.05);
-}
-
 /* === SECCIONES === */
 .seccion {
   padding: 80px 20px;
@@ -168,7 +148,7 @@ body {
 
 /* === HEADER === */
 .main-header {
-  background-color: #6c63ff;
+  background-color: #9593b3;
   color: white;
   padding: 15px 20px;
   position: sticky;
@@ -221,7 +201,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #a59ff7;
+  color: #7d26c5;
 }
 
 /* Dropdown */

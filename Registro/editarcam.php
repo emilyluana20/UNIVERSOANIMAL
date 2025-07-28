@@ -14,6 +14,11 @@ if (!$id) {
     exit();
 }
 
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
 // Obtener datos actuales
 $stmt = $conn->prepare("SELECT * FROM campanias WHERE id = ?");
 $stmt->bind_param("i", $id);
@@ -31,13 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
     $lugar = $_POST['lugar'];
+    $direccion = $_POST['direccion'] ?? '';
     $horario = $_POST['horario'];
 
-    $update = $conn->prepare("UPDATE campanias SET titulo = ?, descripcion = ?, lugar = ?, horario = ? WHERE id = ?");
-    $update->bind_param("ssssi", $titulo, $descripcion, $lugar, $horario, $id);
+    $update = $conn->prepare("UPDATE campanias SET titulo = ?, descripcion = ?, lugar = ?, horario = ?, direccion = ? WHERE id = ?");
+    $update->bind_param("ssssss", $titulo, $descripcion, $lugar, $horario, $direccion, $id);
 
     if ($update->execute()) {
-    header("Location: campañas.php?editada=" . $id);
+    header("Location: ../callamulloproyecto/index.php?editada=" . $id);
     exit();
 } 
  else {
@@ -68,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Horario</label><br>
         <input type="text" name="horario" value="<?= htmlspecialchars($campania['horario']) ?>" required><br><br>
 
-        <button type="submit">Guardar Cambios</button>
-        <a href="campanias.php">Cancelar</a>
+        <button type="sumbit"><a href="../callamulloproyecto/index.php"></a>Guardar Cambios</button>
+        <a href="../callamulloproyecto/index.php">Cancelar</a>
     </form>
 </body>
 </html>

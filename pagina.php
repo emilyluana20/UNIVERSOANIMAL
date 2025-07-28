@@ -5,6 +5,7 @@ $isAdmin = $rol === 'admin';
 $isUsuario = $rol === 'usuario';
 $bodyClass = $isAdmin ? 'admin' : '';
 ?>
+<?php include "Registro/Conexion.php";?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -71,18 +72,18 @@ $bodyClass = $isAdmin ? 'admin' : '';
     <p>Información clara y confiable para que tu mascota esté sana, feliz y segura.</p>
     <div class="cards-grid">
       <div class="card">
-        <img class="img" src="Registro/imagenes/Vacunación1.jpg" alt="Vacunación">
-        <h3>Vacunación</h3>
+        <img class="img" src="Registro/imagenes/Edad.jpg" alt="Vacunación">
+        <a href="Edades.php"><h3>Edades</h3></a>
         <p>Conocé el calendario de vacunas obligatorio y preventivo para cada etapa.</p>
       </div>
       <div class="card">
         <img src="Registro/imagenes/Desparacitación.jpg" alt="Desparasitación">
-        <h3>Desparasitación</h3>
+        <a href="desparacitacion.php"><h3>Desparacitación</h3></a>
         <p>Protegé a tu mascota de parásitos internos y externos con los tratamientos adecuados.</p>
       </div>
       <div class="card">
         <img src="Registro/imagenes/baños.webp" alt="Higiene">
-        <h3>Higiene</h3>
+        <a href="baños.php"><h3>Higiene</h3></a>
         <p>Tips para mantener a tu mascota limpia, sana y cómoda en casa.</p>
       </div>
     </div>
@@ -92,17 +93,28 @@ $bodyClass = $isAdmin ? 'admin' : '';
     <h2>Campañas de atención veterinaria</h2>
     <p>Enterate de las campañas de vacunación, castración y control sanitario en tu zona.</p>
     <div class="cards-grid">
+  <?php
+  $consulta = "SELECT titulo, descripcion, lugar, direccion, horario, fecha_creacion FROM campanias ORDER BY fecha_creacion DESC";
+  $resultado = $conn->query($consulta);
+
+  if ($resultado && $resultado->num_rows > 0):
+      while ($fila = $resultado->fetch_assoc()):
+  ?>
       <div class="card">
-        <h3>Monte Grande</h3>
-        <p>Vacunación pública gratuita</p>
-        <p>Lunes a Viernes - 09:00 a 13:30 hs</p>
+        <h3><?= htmlspecialchars($fila['lugar']) ?></h3>
+        <p><strong><?= htmlspecialchars($fila['titulo']) ?></strong></p>
+        <p><?= htmlspecialchars($fila['horario']) ?></p>
+        <p><?= nl2br(htmlspecialchars($fila['descripcion'])) ?></p>
+        <small style="color:#666">Publicado el <?= date('d/m/Y', strtotime($fila['fecha_creacion'])) ?></small>
       </div>
-      <div class="card">
-        <h3>Barrio Ledesma</h3>
-        <p>Castraciones privadas con turno</p>
-        <p>Lunes a Jueves - 08:00 a 12:30 hs</p>
-      </div>
-    </div>
+  <?php
+      endwhile;
+  else:
+      echo "<p>No hay campañas publicadas aún.</p>";
+  endif;
+  ?>
+</div>
+
   </section>
 
   <section id="perdidos" class="seccion">

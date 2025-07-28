@@ -1,5 +1,11 @@
 <?php
+session_start();
 
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
 if (!empty($_GET["id"])) {
     $id = $_GET["id"];
     $sql = $conn->query("DELETE FROM usuarios WHERE id=$id");

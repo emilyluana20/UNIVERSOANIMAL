@@ -4,7 +4,13 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: Index.php");
     exit();
 }
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,16 +28,13 @@ if (!isset($_SESSION['usuario'])) {
       <h3>Lo que podés hacer como <strong>administrador</strong>:</h3>
       <ul>
         <li>
-          <svg viewBox="0 0 24 24"><path d="M9 19h6v-2H9v2zm-3-4h12v-2H6v2zm-3-4h18v-2H3v2z"/></svg>
-          Crear, modificar y eliminar campañas
+          <a href="../callamulloproyecto/index.php">🐕‍🦺 Crear, modificar y eliminar campañas</a>
         </li>
         <li>
-          <svg viewBox="0 0 24 24"><path d="M9 19h6v-2H9v2zm-3-4h12v-2H6v2zm-3-4h18v-2H3v2z"/></svg>
-          Moderar publicaciones de mascotas perdidas
+          <a href="../redsocial/ver.php"> 🦮Moderar publicaciones de mascotas perdidas</a>
         </li>
         <li>
-          <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2z"/></svg>
-          Acceso completo al panel de administración
+          <a href="../pagina.php">🧑‍💻Acceso completo al panel de administración</a>
         </li>
       </ul>
     </div>
@@ -41,7 +44,7 @@ if (!isset($_SESSION['usuario'])) {
       <ul>
         <li>
           <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4 9 4 11 6 12 8c1-2 3-4 5.5-4 2.5 0 4.5 2 4.5 4.5 0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-          Publicar mascotas perdidas
+          <a href="../redsocial/ver.php">Publicar mascotas perdidas</a>   
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M21 8V7l-3 2-2-1v4h6v-4z"/></svg>

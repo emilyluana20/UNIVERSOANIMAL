@@ -1,5 +1,11 @@
 <?php
 session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
+?>
 
 // Configuración de la base de datos
 $db = "universoanimal";
@@ -19,6 +25,13 @@ $editadaId = $_GET['editada'] ?? null;
 // Traer campañas desde la base de datos
 $sql = "SELECT * FROM campanias ORDER BY fecha_creacion DESC";
 $resultado = $conn->query($sql);
+$sql = "SELECT * FROM campanias ORDER BY fecha_creacion DESC";
+$resultado = $conn->query($sql);
+
+if (!$resultado) {
+    die("Error en la consulta: " . $conn->error);
+}
+
 $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -37,7 +50,18 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
     <div class="logo">Universo Animal</div>
     <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
     <nav class="nav">
+        <a href="../pagina.php">Inicio</a>
         <a href="/UNIVERSOANIMAL/baños.php">Cuidados</a>
+        
+        <div class="dropdown">
+        <a href="#">Cuidados</a>
+        <div class="submenu">
+          <a href="desparacitacion.php">Desparacitación</a>
+          <a href="pulgagarra.php">Pulgas y garrapatas</a>
+          <a href="baños.php">Baños</a>
+          <a href="Edades.php">Edades</a>
+        </div>
+      </div>
         <?php if ($_SESSION['rol'] === 'admin'): ?>
             <a href="../Registro/crear_campañias.php">+ Crear campaña</a>
         <?php endif; ?>
@@ -63,7 +87,7 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
     <input type="text" id="searchInput" placeholder="Escribí para buscar...">
     <ul id="resultsList" class="list">
         <?php foreach ($campanias as $campania): 
-            $claseResaltado = ($campania['id'] == $editadaId) ? 'resaltado' : '';
+            $claseResaltado = ($campania['Id'] == $editadaId) ? 'resaltado' : '';
         ?>
             <li class="list-item <?= $claseResaltado ?>" data-lugar="<?= strtolower($campania['lugar']) ?>"
                 data-fecha="<?= $campania['fecha_creacion'] ?>"
@@ -72,8 +96,8 @@ $campanias = $resultado->fetch_all(MYSQLI_ASSOC);
                 <div class="datetime"><?= htmlspecialchars($campania['horario']) ?> · <?= date("d/m/Y", strtotime($campania['fecha_creacion'])) ?></div>
                 <div class="descripcion"><?= htmlspecialchars($campania['descripcion']) ?></div>
                 <?php if ($rol === 'admin'): ?>
-                    <a href="../Registro/editarcam.php?id=<?= $campania['id'] ?>" class="btn-principal">Editar</a>
-                    <a href="../Registro/eliminarcam.php?id=<?= $campania['id'] ?>" class="btn-secundario" onclick="return confirm('¿Estás segur@ que querés eliminar esta campaña?')">Eliminar</a>
+                    <a href="../Registro/editarcam.php?id=<?= $campania['Id'] ?>" class="btn-principal">Editar</a>
+                    <a href="../Registro/eliminarcam.php?id=<?= $campania['Id'] ?>" class="btn-secundario" onclick="return confirm('¿Estás segur@ que querés eliminar esta campaña?')">Eliminar</a>
                 <?php endif; ?>
             </li>
         <?php endforeach; ?>

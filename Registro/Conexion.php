@@ -1,4 +1,9 @@
 <?php
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
 $host = "localhost";
 $user = "root";
 $pass = "";

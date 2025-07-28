@@ -1,6 +1,12 @@
 <?php
 session_start();
 include "conexion.php";
+if (!isset($_SESSION['usuario_id'])) {
+    session_destroy();
+    header("Location: index.php?msg=acceso_no_autorizado");
+    exit();
+}
+?>
 
 if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
     echo "<h2 style='color: crimson; font-family: sans-serif; text-align: center; margin-top: 50px;'>🚫 Acceso denegado. Solo los administradores pueden eliminar campañas.</h2>";
