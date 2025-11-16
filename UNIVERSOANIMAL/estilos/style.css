@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Crimson Text', serif;
+  background-color: #fdfdf5;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #eaf5ec;
+  font-family: 'Fredoka One', cursive;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #2c2c2c;
+}
+
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #067a6f;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #034e46;
+}
+
+.bienvenida {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: #fefce8;
+}
+
+.texto-bienvenida h1 {
+  font-size: 2.5rem;
+  color: #02735e;
+  margin-bottom: 10px;
+}
+
+.texto-bienvenida p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.texto-bienvenida button {
+  background-color: #02735e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.imagen-bienvenida img {
+  width: 250px;
+  max-width: 100%;
+}
+
+.cuidados {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff5e0;
+}
+
+.cuidados h2 {
+  font-size: 1.8rem;
+  color: #f39200;
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 30px;
+}
+
+.items-cuidados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.item p {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #444;
+}
+/* Campañas */
+.campanias {
+  background-color: #fefce8;
+  padding: 40px 20px;
+  text-align: center;
+}
+.campanias h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.8rem;
+  color: #f39200;
+  margin-bottom: 20px;
+}
+.tarjetas-campanias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* Perdidos */
+.perdidos {
+  background-color: #fffce8;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.perdidos h2 {
+  color: #77bde0;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: 'Fredoka One', cursive;
+}
+
+.tarjetas-perdidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card-perdido {
+  background-color: #adc2f3;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.card-perdido img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.boton-publicar {
+  margin-top: 20px;
+  background-color: #ffed7c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Reencuentros */
+.reencuentros {
+  background-color: #fcf8df;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.reencuentros h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: #85bb65;
+  margin-bottom: 20px;
+}
+
+.tarjetas-reencuentros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card-reencuentro {
+  background-color: #5a9b76;
+  border-radius: 20px;
+  padding: 15px;
+  color: white;
+}
+
+.card-reencuentro img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

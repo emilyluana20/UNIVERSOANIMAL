@@ -1,0 +1,28 @@
+/* mapa.css */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f6fbff;
+  color: #222;
+}
+
+.topbar {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #66b3ff;
+  color: white;
+  gap: 12px;
+}
+.topbar h1 { margin: 0; font-size: 18px; }
+.controls { font-size: 14px; display:flex; gap: 8px; align-items:center; }
+
+#map {
+  height: calc(100vh - 56px); /* ajusta al header */
+  width: 100%;
+}
+
+/* Popups más legibles */
+.leaflet-popup-content-wrapper { font-size: 14px; }

@@ -1,0 +1,325 @@
+/* === RESET & BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #D9E9CF; /* fondo general */
+  color: #444;
+  min-width: 320px;
+  transition: margin-left 0.3s ease;
+}
+
+/* === HERO === */
+.hero {
+  background-image: url('../imagenes/Inicio.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding-top: 150px; /* más compacto */
+  padding-bottom: 100px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem; /* más pequeño */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1rem; /* más compacto */
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* === SECCIONES === */
+.seccion {
+  padding: 60px 20px; /* menos espacio */
+  text-align: center;
+  background-color: #D9E9CF;
+}
+
+/* === CARDS === */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #B6CEB4;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  background-color: #A7AAE1;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #696FC7;
+  margin-top: 10px;
+}
+
+/* === GALERÍA DE REENCUENTROS === */
+.galeria-reencuentros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.galeria-reencuentros .card {
+  flex: 1 1 250px;
+  max-width: 250px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #B6CEB4;
+}
+
+.galeria-reencuentros .card img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Imagenes cards */
+.img {
+  width: 100px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+/* === FOOTER === */
+.footer {
+  background-image: url(../imagenes/Footer.jpg);
+  color: white;
+  text-align: center;
+  padding: 60px 20px; /* más compacto */
+  margin-top: 40px;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Espacio entre párrafos dentro del container */
+.footer .container p + p {
+  margin-top: 20px;
+}
+
+/* === MENÚ NUEVO AJUSTADO === */
+.navbar {
+  color: #98A1BC;/* color header */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ padding: 0.3rem 1.5rem; /* header más compacto */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === LOGO CON IMAGEN === */
+.logo img {
+  height: 50px; /* ajusta tamaño de logo */
+  width: auto;
+  display: block;
+}
+
+
+/* === NAV LINKS === */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 6px 0;
+}
+.menu-toggle {
+  font-size: 1.4rem;
+}
+
+.nav-links li a:hover {
+  color: #f0f0f0;
+}
+
+/* === SUBMENÚ === */
+.dropdown {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.submenu li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 15px;
+  color: #444;
+}
+
+.submenu a:hover {
+  background: #f8f6fc;
+  color: #6b5b95;
+}
+
+.dropdown:hover .submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* === BOTÓN DE MENÚ (RESPONSIVE) === */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* === CERRAR SESIÓN === */
+.logout {
+  background: #6b5b95;
+  color: #fff !important;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.logout:hover {
+  background: #8377b8;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #98A1BC;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 500px;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    border-radius: 0;
+  }
+
+  .submenu a {
+    padding: 10px;
+  }
+
+  .dropdown:hover .submenu {
+    transform: none;
+  }
+}
+/*LETRAS PARA TITULOO*/
+.cinzel {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/*LETRAS PARA EL CUERPO*/
+.rokkitt {
+  font-family: "Rokkitt", serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* poné un valor real: 100, 200, 300... */
+  font-style: normal;
+  font-size: 20px; /* <--- acá agrandás la letra */
+}

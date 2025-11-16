@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+header {
+  background-color: white;
+  color: #6c63ff; /* tono morado que resalta pero suave */
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6c63ff; /* mismo color para el logo */
+}
+
+nav a {
+  color: #6c63ff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #6c63ff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0ff;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn-principal, .btn-secundario {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+   } }
+
+   
+   /*Diseño del menu*/
+/* === BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === LOGO === */
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #424874;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #6b5b95;
+}
+
+/* === NAV LINKS === */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #6b5b95;
+}
+
+/* === SUBMENÚ === */
+.dropdown {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.submenu li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 15px;
+  color: #444;
+}
+
+.submenu a:hover {
+  background: #f8f6fc;
+  color: #6b5b95;
+}
+
+/* Mostrar submenu al pasar el mouse */
+.dropdown:hover .submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* === BOTÓN DE MENÚ (RESPONSIVE) === */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #444;
+}
+
+/* === CERRAR SESIÓN === */
+.logout {
+  background: #6b5b95;
+  color: #fff !important;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.logout:hover {
+  background: #8377b8;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 500px;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    border-radius: 0;
+  }
+
+  .submenu a {
+    padding: 10px;
+  }
+
+  .dropdown:hover .submenu {
+    transform: none;
+  }
+}

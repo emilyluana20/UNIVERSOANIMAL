@@ -1,0 +1,172 @@
+/* Fondo general con la imagen */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('../imagenes/Fondito.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-size: 100%;
+
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background: rgba(255, 255, 255, 0.1); /* blanco semitransparente */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Estilos generales del formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario h2 {
+  text-align: center;
+  color: #3f3b57;
+  margin-bottom: 20px;
+}
+
+.formulario label {
+  width: 90%;
+  max-width: 280px;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.formulario input {
+  width: 90%;
+  max-width: 280px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Botones */
+.formulario button {
+  width: 90%;
+  max-width: 280px;
+  padding: 12px;
+  background-color: #9e95cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.formulario button:hover {
+  background-color: #908ca3;
+}
+
+.formulario .toggle-btn {
+  background-color: #908ca3;
+  color: white;
+  margin-top: 15px;
+}
+
+.formulario .toggle-btn:hover {
+  background-color: #a39dbc;
+}
+
+/* Mensaje emergente */
+.mensaje {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Mostrar mensaje */
+.mensaje.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mensajes de éxito y error */
+.mensaje-exito {
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #4caf50;
+  box-shadow: 0 0 12px #4caf50aa;
+}
+
+.mensaje-error {
+  background-color: #ffdddd;
+  color: #a94442;
+  border: 1px solid #a94442;
+  box-shadow: 0 0 12px #a94442aa;
+}
+
+/* Oculta el formulario de registro */
+.hidden {
+  display: none;
+}
+.formulario {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.formulario button:hover {
+  background-color: #908ca3;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.formulario input:focus {
+  border-color: #98A1BC;
+  box-shadow: 0 0 5px #908ca3;
+  outline: none;
+  transition: 0.3s ease;
+}
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .formulario input,
+  .formulario button {
+    width: 100%;
+  }
+}
+
+/*LETRAS PARA TITULOO*/
+.cinzel {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/*LETRAS PARA EL CUERPO*/
+.rokkitt {
+  font-family: "Rokkitt", serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* poné un valor real: 100, 200, 300... */
+  font-style: normal;
+  font-size: 20px; /* <--- acá agrandás la letra */
+}
+
